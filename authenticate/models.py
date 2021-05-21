@@ -75,8 +75,5 @@ class Person(AbstractUser):
     changed = models.DateTimeField(auto_now=True)
     avatar = models.ImageField(upload_to='avatar/%Y/%m/%d')
 
-
     def __str__(self):
         return f'{self.username}'
-
-

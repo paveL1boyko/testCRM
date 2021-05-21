@@ -2,10 +2,10 @@ import os
 import random
 
 import django
+from django.contrib.auth.hashers import make_password
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'testCRM.settings')
 django.setup()
-
 from django_seed import Seed
 
 from authenticate.models import *
@@ -26,9 +26,11 @@ seeder.add_entity(Performance, COUNT_TABLE_ROW, dict(
 seeder.add_entity(Status, COUNT_TABLE_ROW, {
     'title': lambda x: random.choice(['teacher', 'student', 'manager']),
 })
+RANDOM_PASSWORD = random.choice(['14ajfvaje', '3434gaeraer', '34g34gag35g'])
 
 seeder.add_entity(Person, COUNT_TABLE_ROW, dict(
     phone='+375 26 555 44 44',
+    password=lambda x: make_password(RANDOM_PASSWORD),
     # status={random.choice(range(COUNT_TABLE_ROW))},
     # courses={random.choice(range(COUNT_TABLE_ROW))}
 ))
