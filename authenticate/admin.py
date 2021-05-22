@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-
 from django.utils.functional import lazy
 from django.utils.translation import gettext, gettext_lazy as _
+
 
 gettext_lazy = lazy(gettext, str)
 
@@ -24,7 +24,7 @@ class AdvNewUserAdmin(UserAdmin):
     save_on_top = True
     filter_horizontal = ('groups', 'user_permissions', 'status')
     inlines = [CourseInlineAdmin]
-    # 'status', 'courses'
+    list_display_links = ('username', 'email', 'first_name', 'last_name')
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'phone',
@@ -33,4 +33,10 @@ class AdvNewUserAdmin(UserAdmin):
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'password1', 'password2', 'email'),
+        }),
     )

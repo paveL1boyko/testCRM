@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from authenticate.models import Person
+
+
+class PersonListView(ListView):
+    model = Person
+    paginate_by = 2

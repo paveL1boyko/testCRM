@@ -31,3 +31,4 @@ import re
 # import timeit
 # print(min(timeit.repeat(stmt='[abs(i) for i in range(10000)]', number=1000, repeat=5)))
 # print(min(timeit.repeat(stmt='list(map(lambda x: abs(x), range(10000)))', number=1000, repeat=5)))
+

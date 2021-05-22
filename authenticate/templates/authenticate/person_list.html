@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Pesons</h1>
+    {% for person in person_list %}
+        <h2>{{ person }}</h2>
+        <p>{{ person.status}}</p>
+        <p>{{ person.phone }}</p>
+        <p>{{ person.email }}</p>
+    {% endfor %}
+    {% include 'authenticate/paginator.html'  %}
+</body>
+</html>

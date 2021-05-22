@@ -60,18 +60,13 @@ class CoursePerformance(models.Model):
 
 
 class Person(AbstractUser):
-    # name = models.CharField(max_length=100)
-    # surname = models.CharField(max_length=100)
-    # username = models.CharField
-
-    # email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True)
     password = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
     address = models.ForeignKey('Address', on_delete=models.CASCADE, null=True)
     courses = models.ManyToManyField('Course', through_fields=('person', 'course'),
                                      through='CoursePerformance')
     status = models.ManyToManyField('Status')
-    # date_created = models.DateTimeField(auto_created=True)
     changed = models.DateTimeField(auto_now=True)
     avatar = models.ImageField(upload_to='avatar/%Y/%m/%d')
 
