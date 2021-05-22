@@ -23,7 +23,6 @@ pip install -r requirements.txt
 #### Add fake data in db
 ```
 python seed.py
-
 ```
 
 
