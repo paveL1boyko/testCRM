@@ -3,6 +3,9 @@
 /authenticate/migrations/*
 !/authenticate/migrations/__init__.py
 
+#igore static
+static/
+
 __pycache__/
 *.py[cod]
 *$py.class
