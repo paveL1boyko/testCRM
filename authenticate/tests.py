@@ -1,5 +1,3 @@
-import random
-import re
 #
 # print(f'{random.choice([1, 4.4, 55]) = }')
 # _str = 'new str raer'
@@ -31,4 +29,9 @@ import re
 # import timeit
 # print(min(timeit.repeat(stmt='[abs(i) for i in range(10000)]', number=1000, repeat=5)))
 # print(min(timeit.repeat(stmt='list(map(lambda x: abs(x), range(10000)))', number=1000, repeat=5)))
+# from tests2 import a
+# a.append(1)
+# print(a)
 
+# print(a)
+#

@@ -1,11 +1,13 @@
 ### Python template
 # Byte-compiled / optimized / DLL files
-/authenticate/migrations/*
-!/authenticate/migrations/__init__.py
+#/media/*/*.txt
 
+/*/migrations/*
+!/*/migrations/__init__.py
+#authenticate/migrations/*.*
+#!authenticate/migrations/*.html
 #igore static
 static/
-
 __pycache__/
 *.py[cod]
 *$py.class

@@ -2,8 +2,10 @@ from django.urls import path
 from django.views.generic import ListView
 
 from authenticate.models import Person
-from authenticate.views import PersonListView
+from authenticate.views import PersonCreateView, PersonListView
 
+app_name = 'authenticate'
 urlpatterns = [
-    path('person', ListView.as_view(model=Person, paginate_by=2), name='list_person'),
+    path('person/', PersonListView.as_view(), name='person_list'),
+    path('create/', PersonCreateView.as_view(), name='create'),
 ]
