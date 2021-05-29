@@ -28,3 +28,5 @@ class PersonCreateView(CreateView):
     template_name = 'authenticate/person_list.html'
     form_class = PersonForm
     success_url = reverse_lazy('authenticate:person_list')
+
+
