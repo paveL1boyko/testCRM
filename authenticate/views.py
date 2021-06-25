@@ -1,8 +1,11 @@
+from django.db.models import *
+from django.db.models.functions import Concat
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, UpdateView, CreateView
 
 from .forms import PersonForm
-from .models import Person
+from .models import Person, Course, Address
 
 
 class PersonUpdateView(UpdateView):
@@ -30,3 +33,8 @@ class PersonCreateView(CreateView):
     success_url = reverse_lazy('authenticate:person_list')
 
 
+def person_list(request):
+    p = Address.objects.all()
+    g = Person.objects.aggregate(c=Count('id'))
+    Course.objects.filter(pk=1).update(title=Concat(F('title'), Value(' 1')))
+    return render(request, 'authenticate/person_list.html', {'person_list': p})

@@ -36,7 +36,8 @@ class Status(models.Model):
     def __str__(self):
         return self.title
 
-
+from django.db.models.functions import Concat
+# from django.db.
 class Course(models.Model):
     title = models.CharField(max_length=300)
     description = models.TextField()

@@ -7,11 +7,11 @@
 <body>
 
 <h2>Form</h2>
-<form action="{% url 'authenticate:create' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Save</button>
-</form>
+{#<form action="{% url 'authenticate:create' %}" method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <button>Save</button>#}
+{#</form>#}
 
 <h1>Pesons</h1>
     {% for person in person_list %}
